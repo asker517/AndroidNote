@@ -1,5 +1,7 @@
 AndroidNote
 ============
+![alt text](https://github.com/asker517/AndroidNote/blob/master/png/android.png "code in android ")
+
 Some notes in my android developing...
 
 个人在Androdi开发过程中的一些笔记...
