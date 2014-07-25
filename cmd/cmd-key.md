@@ -1,5 +1,5 @@
 # Android 生成签名key #
-1. CMD窗口下输入 **keytool -genkey -alias android.keystore -keyalg RSA -****validity 20000 -keystore android.keystore**
+1. CMD窗口下输入 **keytool -genkey -alias android.keystore -keyalg RSA -validity 20000 -keystore android.keystore**
 2. 输入key密码以及key信息
 3. 执行完成后默认生成在JDK Bin目录
 
