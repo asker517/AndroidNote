@@ -13,7 +13,7 @@ Developed By
 Asker
 
 * QQ:  6781219
-* E-mail: [asker.zuo@gmail.com](asker.zuo@gmail.com)
+* E-mail: <asker.zuo@gmail.com>
 
 License
 ============
