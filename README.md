@@ -1,6 +1,6 @@
 AndroidNote
 ============
-![alt text](https://github.com/asker517/AndroidNote/blob/master/png/android.png "code in android ")
+<p align="center"><img src="https://raw.githubusercontent.com/asker517/AndroidNote/master/png/android.png" alt="alt text" title="code in android " /></p>
 
 Some notes in my android developing...
 
@@ -12,11 +12,12 @@ Developed By
 =============
 Asker
 
-* QQ:6781219
+* QQ:  6781219
+* E-mail: [asker.zuo@gmail.com](asker.zuo@gmail.com)
 
 License
 ============
-	Copyright (C) 2013 Charon Chui <asker.zuo@gmail.com>
+	Copyright (C) 2013 Asker.Zuo <asker.zuo@gmail.com>
         
     Licensed under the Apache License, Version 2.0 (the "License");
 	you may not use this file except in compliance with the License.
