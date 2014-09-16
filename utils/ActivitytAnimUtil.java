@@ -1,5 +1,3 @@
-package com.common.hna.util;
-
 import android.app.Activity;
 import android.content.Intent;
 import com.hna.tarmac.frontlinestaff.R;
