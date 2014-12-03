@@ -29,3 +29,5 @@
     		}
 			return false;
 		}
+## Popupwindow响应Key事件 ##
+Popupwindow本身无法设置OnKeyListener,所以只能给popupwindow.getContentView()setOnKeyListener{...},并且要设置popupwindow.getContentView().setFocusableInTouchMode(true);
