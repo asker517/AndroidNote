@@ -3,7 +3,6 @@
 
 ```
 <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
-
 ```
 
 2.代码部分
@@ -12,7 +11,6 @@
 AlertDialog dialog = b.create();
 dialog.getWindow().setType(WindowManager.LayoutParams.TYPE_SYSTEM_ALERT);
 dialog.show();
-
 ```
         
 ##判断程序是否在前台运行
@@ -20,7 +18,6 @@ dialog.show();
 
 ```
 <uses-permission android:name="android.permission.GET_TASK"/>
-
 ```
 
 2.代码部分:
@@ -47,7 +44,6 @@ Popupwindow本身无法设置OnKeyListener,所以只能给popupwindow.getContent
 
 ```
 popupwindow.getContentView().setFocusableInTouchMode(true);
-
 ```
 
 ##ListView最佳精确恢复滚动位置方法之一
