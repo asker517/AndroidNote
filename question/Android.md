@@ -22,7 +22,7 @@ dialog.show();
 
 2.代码部分:
 
-```
+```java
 
  private boolean isRunningInForeground() {
     		ActivityManager manager = (ActivityManager)getSystemService(Context.ACTIVITY_SERVICE);
