@@ -46,6 +46,31 @@ Popupwindow本身无法设置OnKeyListener,所以只能给popupwindow.getContent
 popupwindow.getContentView().setFocusableInTouchMode(true);
 ```
 
+##PopupWindow在空间充足的情况下弹出位置
+
+```
+ int[] location = new int[2];  
+ anchor.getLocationOnScreen(location); 
+ //上方
+ popupWindow.showAtLocation(v, Gravity.NO_GRAVITY, location[0], location[1]-popupWindow.getHeight()); 
+ 
+ //正上方
+ popupWindow.showAtLocation(parent, Gravity.NO_GRAVITY, location[0]+anchor.getWidth()/2-popupWindow.getWidth()/2, location[1] - popupWindow.getHeight());
+ 
+ //下方
+ popupWindow.showAsDropDown(anchor);
+ 
+ //正下方
+ popupWindow.showAsDropDown(andhor,andhor.getWidth()/2-popupWindow.getWidth()/2,0);
+ 
+ //左边
+ popupWindow.showAtLocation(anchor, Gravity.NO_GRAVITY, location[0] - popupWindow.getWidth(), location[1]);
+ 
+ //右边
+ popupWindow.showAtLocation(anchor, Gravity.NO_GRAVITY, location[0] + anchor.getWidth(), location[1]); 
+ 
+```
+
 ##ListView最佳精确恢复滚动位置方法之一
 ```
 //Save the current state
