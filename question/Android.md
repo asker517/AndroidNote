@@ -24,31 +24,32 @@ dialog.show();
 
 ```java
 
- private boolean isRunningInForeground() {
-    		ActivityManager manager = (ActivityManager)getSystemService(Context.ACTIVITY_SERVICE);
-    		List<ActivityManager.RunningAppProcessInfo> appProcesses = manager.getRunningAppProcesses();
-	if (appProcesses == null) return false;
-	for (ActivityManager.RunningAppProcessInfo appProcess : appProcesses) {
-      		if (appProcess.processName.equals(MY_APP_PACKAGE)
-          		&& appProcess.importance == ActivityManager.RunningAppProcessInfo.IMPORTANCE_FOREGROUND) {
-       		 	return true;
-     		 }
-    		}
-			return false;
-		}
+    private boolean isRunningInForeground() {
+        ActivityManager manager = (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE);
+        List<ActivityManager.RunningAppProcessInfo> appProcesses = manager.getRunningAppProcesses();
+
+        if (appProcesses == null) return false;
+        for (ActivityManager.RunningAppProcessInfo appProcess : appProcesses) {
+            if (appProcess.processName.equals(MY_APP_PACKAGE)
+                && appProcess.importance == ActivityManager.RunningAppProcessInfo.IMPORTANCE_FOREGROUND) {
+                return true;
+            }
+        }
+        return false;
+    }
 ```
 
 
 ##Popupwindow响应Key事件
 Popupwindow本身无法设置OnKeyListener,所以只能给popupwindow.getContentView().setOnKeyListener{...},并且要设置
 
-```
+```java
 popupwindow.getContentView().setFocusableInTouchMode(true);
 ```
 
 ##PopupWindow在空间充足的情况下弹出位置
 
-```
+```java
  int[] location = new int[2];  
  anchor.getLocationOnScreen(location); 
  //上方
@@ -72,7 +73,8 @@ popupwindow.getContentView().setFocusableInTouchMode(true);
 ```
 
 ##ListView最佳精确恢复滚动位置方法之一
-```
+
+```java
 //Save the current state
 Parcelable state = mListView.onSaveInstanceState();
 
