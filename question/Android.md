@@ -7,7 +7,7 @@
 
 2.代码部分
 
-```
+```java
 AlertDialog dialog = b.create();
 dialog.getWindow().setType(WindowManager.LayoutParams.TYPE_SYSTEM_ALERT);
 dialog.show();
