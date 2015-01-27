@@ -97,3 +97,12 @@ private boolean isInRangeOfView(View view, MotionEvent ev) {
         return true;
     }
 ```
+##判断ListView是否滚动到了顶部(无Header情况)
+```java
+View firstItem = listView.getChildAt(0);
+Rect rect = new Rect(0, 0, firstItem.getWidth(), firstItem.getHeight());
+listView.getChildVisibleRect(firstItem, rect, null);
+if (rect.height() < firstItem.getHeight()) { 
+        //ListView第一个条目没有完全显示完(未到达顶部)
+   }
+```
