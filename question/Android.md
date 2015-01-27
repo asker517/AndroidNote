@@ -81,4 +81,19 @@ Parcelable state = mListView.onSaveInstanceState();
 //Restore the state
 mListView.onRestoreInstanceState(state);
 ```
+##判断点击位置是否在指定的View上
 
+```java
+private boolean isInRangeOfView(View view, MotionEvent ev) {
+
+        int[] location = new int[2];
+        view.getLocationOnScreen(location);
+        int x = location[0];
+        int y = location[1];
+        if (ev.getRawX() < x || ev.getRawX() > (x + view.getWidth()) || ev.getRawY() < y || ev.getRawY() > (y
+            + view.getHeight())) {
+            return false;
+        }
+        return true;
+    }
+```
