@@ -1,4 +1,4 @@
-# Android Developing On Mac OS X
+# Android Developing On Mac OS X(2014.12.09)
 
 #### 1. Mac OS X 环境变量:
 
