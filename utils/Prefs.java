@@ -1,12 +1,16 @@
+package cn.koosoft.xjtu120th.utils;
+
+import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.os.Build;
 import android.preference.PreferenceManager;
 
 import java.util.Map;
 import java.util.Set;
 
 /**
- *         Wrapper over the Android Preferences which provides a fluid syntax
+ * Wrapper over the Android Preferences which provides a fluid syntax
  */
 public class Prefs {
 
@@ -60,6 +64,7 @@ public class Prefs {
         editor.putLong(key, value).apply();
     }
 
+    @TargetApi(Build.VERSION_CODES.HONEYCOMB)
     public void save(String key, Set<String> value) {
         editor.putStringSet(key, value).apply();
     }
@@ -84,6 +89,7 @@ public class Prefs {
         return preferences.getLong(key, defValue);
     }
 
+    @TargetApi(Build.VERSION_CODES.HONEYCOMB)
     public Set<String> getStringSet(String key, Set<String> defValue) {
         return preferences.getStringSet(key, defValue);
     }
