@@ -106,3 +106,5 @@ if (rect.height() < firstItem.getHeight()) {
    //ListView第一个条目没有完全显示完(未到达顶部)
 }
 ```
+##9.png图片制作
+左上为拉伸区域;右下为内容显示区域
