@@ -12,7 +12,12 @@ AlertDialog dialog = b.create();
 dialog.getWindow().setType(WindowManager.LayoutParams.TYPE_SYSTEM_ALERT);
 dialog.show();
 ```
-        
+
+
+----------
+
+
+  
 ##判断程序是否在前台运行
 1.注册权限
 
@@ -23,11 +28,9 @@ dialog.show();
 2.代码部分:
 
 ```java
-
     private boolean isRunningInForeground() {
         ActivityManager manager = (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE);
         List<ActivityManager.RunningAppProcessInfo> appProcesses = manager.getRunningAppProcesses();
-
         if (appProcesses == null) return false;
         for (ActivityManager.RunningAppProcessInfo appProcess : appProcesses) {
             if (appProcess.processName.equals(MY_APP_PACKAGE)
@@ -39,6 +42,8 @@ dialog.show();
     }
 ```
 
+
+----------
 
 ##Popupwindow响应Key事件
 Popupwindow本身无法设置OnKeyListener,所以只能给popupwindow.getContentView().setOnKeyListener{...},并且要设置
@@ -72,6 +77,9 @@ popupwindow.getContentView().setFocusableInTouchMode(true);
  
 ```
 
+
+----------
+
 ##ListView最佳精确恢复滚动位置方法之一
 
 ```java
@@ -81,6 +89,9 @@ Parcelable state = mListView.onSaveInstanceState();
 //Restore the state
 mListView.onRestoreInstanceState(state);
 ```
+
+----------
+
 ##判断点击位置是否在指定的View上
 
 ```java
@@ -97,6 +108,9 @@ private boolean isInRangeOfView(View view, MotionEvent ev) {
         return true;
     }
 ```
+
+----------
+
 ##判断ListView是否滚动到了顶部(无Header情况)
 ```java
 View firstItem = listView.getChildAt(0);  //返回的是可见视图范围内的第一条Item视图
@@ -106,5 +120,18 @@ if (rect.height() < firstItem.getHeight()) {
    //ListView第一个条目没有完全显示完(未到达顶部)
 }
 ```
+
+----------
+
 ##9.png图片制作
-左上为拉伸区域;右下为内容显示区域
+左上为拉伸区域；右下为内容显示区域
+
+----------
+
+##LayoutInflater的三种方式区别
+
+- LayoutInflater.inflate(resId , null)：**创建ID为resId的view，并且返*回该view*；不能正确处理该view自身定义的宽和高**，因为：layout_width，layout_height是相对了父级设置的，必须与父级的LayoutParams一致。而此root参数为null，不会生成相应的LayoutParams。
+
+-  LayoutInflater.inflate(resId , parent,，false)：**创建ID为resId的view，并且返*回该view*；可以正确处理view自身定义的宽和高**，因为root参数不为空，view会从root.generateLayoutParams(attrs)得到的对应的LayoutParams。
+
+- LayoutInflater.inflate(resId , parent,，true)：**创建ID为resId的view，并且把该view加入到parent，最终*返回的是parent*；可以正确处理view自身定义的宽和高。**
