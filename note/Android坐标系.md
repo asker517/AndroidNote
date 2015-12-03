@@ -13,8 +13,8 @@
 > * view.scrollTo(x,y):  将整个父视图的左上角定为(0,0)，再移动这个屏幕的左上角到父视图的点(x,y)处，注意此处的x和y是根据父视图的坐标系来定的。
 > * view.scrollBy(x,y):  x代表横向移动的距离，y代表纵向移动的距离
 
-### MotionEvent类中 getRowX()和 getX()
-> * event.getRowX(): 触摸点相对于**屏幕原点**的X坐标
+### MotionEvent类中 getRawX()和 getX()
+> * event.getRawX(): 触摸点相对于**屏幕原点**的X坐标
 > * event.getX(): 触摸点相对于其所在**组件原点**的X坐标
 
 ### android.view.View.layout(int l, int t, int r, int b)
